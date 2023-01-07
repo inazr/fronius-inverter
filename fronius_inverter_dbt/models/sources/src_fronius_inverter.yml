@@ -1,0 +1,7 @@
+version: 2
+
+sources:
+  - name: fronius_inverter
+    schema: raw_fronius_inverter
+    tables:
+      - name: raw_get_power_from_realtime_data
