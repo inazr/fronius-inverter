@@ -11,7 +11,6 @@ def get_json():
     with urllib.request.urlopen(FRONIUS_INVERTER_PATH) as url:
         data = json.load(url)
         df_json_normalized = pd.json_normalize(data)
-        df_json_normalized.columns = df_json_normalized.columns.str.replace('.', '_')
 
     return df_json_normalized
 
@@ -31,14 +30,16 @@ def write_to_bq(df):
         return "Failed"
 
 
-def run_this(request):
+def entry_point(request):
     start_time = time.time()
+
     df_inverter_data = get_json()
 
     for x in range(1, 60):
         time.sleep(1.0 - (time.time() - start_time) % 1.0)
         df_inverter_data = pd.concat([df_inverter_data, get_json()])
 
+    df_inverter_data.columns = df_inverter_data.columns.str.replace('.', '_')
     write_to_bq(df_inverter_data)
 
-    return "Everything Done"
+    return "Success"
