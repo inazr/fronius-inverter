@@ -4,7 +4,7 @@ import pandas as pd
 from google.cloud import bigquery
 import time
 
-FRONIUS_INVERTER_PATH = 'http://fronius-ohm.nerdpol.ovh:17080/solar_api/v1/GetPowerFlowRealtimeData.fcgi'
+FRONIUS_INVERTER_PATH = 'PATH_TO_FRONIUS_INVERTER:80/solar_api/v1/GetPowerFlowRealtimeData.fcgi'
 
 
 def get_json():
