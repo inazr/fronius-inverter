@@ -36,3 +36,6 @@ models:
     staging: # The folder in the models folder
       fronius_inverter:
         +schema: stg_fronius_inverter
+
+    core:
+      +schema: core
