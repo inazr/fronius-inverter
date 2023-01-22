@@ -1,3 +1,9 @@
+# Entry Point: run_this
+# Python 3.9
+# Memory 256 MB
+# Timeout 65sec
+# gen1
+
 import urllib.request
 import json
 import pandas as pd
