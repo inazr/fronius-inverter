@@ -1,4 +1,3 @@
-
 SELECT
         Body_Data_Inverters_1_Battery_Mode,
         --SAFE_CAST(Body_Data_Inverters_1_DT AS INT64)        AS Body_Data_Inverters_1_DT,
