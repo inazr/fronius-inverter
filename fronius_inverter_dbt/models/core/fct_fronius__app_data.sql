@@ -4,7 +4,7 @@ SELECT
         EXTRACT(TIME FROM Head_Timestamp) AS reporting_time,
 
         -- Produktion
-        AVG(pv_watt) * 24 / 1000 AS Produktion,
+        AVG(pv_watt) / 1000 AS Produktion,
         (AVG(pv_watt) + AVG(CASE WHEN grid_watt < 0 THEN grid_watt ELSE 0 END)) / 1000 AS Eigenverbrauch,
         ((AVG(pv_watt) + AVG(CASE WHEN grid_watt < 0 THEN grid_watt ELSE 0 END)) + AVG(CASE WHEN akku_watt < 0 THEN akku_watt ELSE 0 END)) / 1000 AS Direktverbrauch,
         AVG(CASE WHEN akku_watt < 0 THEN akku_watt ELSE 0 END) / 1000 * -1 AS in_die_Batterie,
