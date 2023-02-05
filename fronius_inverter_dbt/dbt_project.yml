@@ -37,8 +37,14 @@ models:
       fronius_inverter:
         +schema: stg_fronius_inverter
 
+      prices:
+        +schema: stg_prices
+
     core:
       +schema: core
 
     transformation:
       +schema: transformation
+
+seeds:
+  +schema: seeds

@@ -22,7 +22,7 @@ def get_json():
 
 
 def write_to_bq(df):
-    table_id = "fronius-inverter.raw_fronius_inverter.raw_get_power_from_realtime_data"
+    table_id = "fronius-inverter.raw_fronius_inverter.raw_get_power_flow_realtime_data"
 
     ## Get BiqQuery Set up
     client = bigquery.Client()
