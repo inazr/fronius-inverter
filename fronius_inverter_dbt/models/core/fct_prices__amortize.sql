@@ -1,7 +1,7 @@
 WITH aggregates AS (
 
     SELECT
-    --         fct_prices__electricity.reporting_date,
+            MAX(fct_prices__electricity.reporting_date) AS latest_reporting_date,
             AVG(fct_prices__electricity.Eigenverbrauchabgabe)
           + AVG(fct_prices__electricity.Opportunitaetserloes)
           + AVG(fct_prices__electricity.Einspeiseverguetung) AS avg_income_per_day,
@@ -16,6 +16,7 @@ WITH aggregates AS (
 )
 
 SELECT
+        latest_reporting_date,
         avg_income_per_day,
         total_costs,
         total_costs / avg_income_per_day AS num_of_days_to_amortize,
