@@ -43,8 +43,17 @@ models:
     core:
       +schema: core
 
+    reporting:
+      +schema: reporting
+
     transformation:
       +schema: transformation
 
+    logs:
+      +schema: logfiles
+
 seeds:
   +schema: seeds
+
+on-run-end:
+  - "{{ log_dbt_results(results) }}"
