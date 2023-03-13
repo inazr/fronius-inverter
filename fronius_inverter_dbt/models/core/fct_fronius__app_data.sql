@@ -1,6 +1,6 @@
 SELECT
-        DATETIME_TRUNC(Head_Timestamp, MINUTE, 'Europe/Berlin') AS reporting_minute,
-        DATE(Head_Timestamp, 'Europe/Berlin') AS reporting_date,
+        DATETIME_TRUNC(Head_Timestamp, MINUTE) AS reporting_minute,
+        DATE(Head_Timestamp) AS reporting_date,
         EXTRACT(TIME FROM Head_Timestamp) AS reporting_time,
 
         -- Produktion
