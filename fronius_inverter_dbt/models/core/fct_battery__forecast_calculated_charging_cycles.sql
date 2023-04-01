@@ -6,6 +6,6 @@ SELECT
         SUM(fct_battery__charging_cycles.full_charging_cycle)
       / COUNT(fct_battery__charging_cycles.full_charging_cycle)
       * 365 AS total_charging_cycles_per_year_based_all_time,
-
+        SUM(fct_battery__charging_cycles.full_charging_cycle) AS charging_cycles_all_time
 FROM
         {{ ref('fct_battery__charging_cycles') }}
